@@ -1,0 +1,199 @@
+/*
+Theme Name: CareerPro
+Description: Современная WordPress тема для профориентации и карьерного консультирования
+Version: 1.0
+Author: Grok
+Tags: professional, career, consulting, modern, corporate
+Text Domain: careerpro
+*/
+
+:root {
+    --primary-color: #1A3C5A; /* Темно-синий для профессионального вида */
+    --secondary-color: #F5A623; /* Акцентный желтый для энергии */
+    --text-color: #333333; /* Основной цвет текста */
+    --background-color: #F8F9FA; /* Светлый фон */
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-secondary: 'Merriweather', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Хедер */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Навигация */
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-navigation a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--secondary-color);
+}
+
+/* Основной контент */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.entry-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.entry-title {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Карточки услуг */
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Формы */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+/* Футер */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .entry-title {
+        font-size: 2rem;
+    }
+}
