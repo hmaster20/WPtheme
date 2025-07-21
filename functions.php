@@ -28,8 +28,8 @@ function careerpro_setup() {
 add_action('after_setup_theme', 'careerpro_setup');
 
 function careerpro_enqueue_styles() {
-    wp_enqueue_style('careerpro-style', get_stylesheet_uri(), array(), '1.0');
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap', array(), null);
+    wp_enqueue_style('careerpro-style', get_stylesheet_uri(), array(), '1.1');
+    // Убрано подключение Google Fonts для производительности
 }
 
 add_action('wp_enqueue_scripts', 'careerpro_enqueue_styles');

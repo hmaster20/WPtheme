@@ -1,21 +1,22 @@
 /*
 Theme Name: CareerPro
 Description: Современная WordPress тема для профориентации и карьерного консультирования
-Version: 1.0
+Version: 1.1
 Author: Grok
 Tags: professional, career, consulting, modern, corporate
 Text Domain: careerpro
 */
 
 :root {
-    --primary-color: #1A3C5A; /* Темно-синий для профессионального вида */
-    --secondary-color: #F5A623; /* Акцентный желтый для энергии */
-    --text-color: #333333; /* Основной цвет текста */
-    --background-color: #F8F9FA; /* Светлый фон */
+    --primary-color: #1A3C5A; /* Темно-синий */
+    --secondary-color: #F5A623; /* Оранжевый */
+    --text-color: #333333;
+    --background-color: #F8F9FA;
     --white: #FFFFFF;
     --gray: #6B7280;
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-secondary: 'Merriweather', serif;
+    --font-primary: -apple-system, BlinkMacSystemFont, sans-serif; /* Системный шрифт вместо Montserrat */
+    --font-secondary: 'Merriweather', serif; /* Аналог Playfair Display */
+    --font-link: 'Georgia', serif; /* Для ссылок и кнопок */
 }
 
 * {
@@ -30,6 +31,23 @@ body {
     background-color: var(--background-color);
     line-height: 1.6;
     font-size: 16px;
+}
+
+/* Стили для ссылок */
+a {
+    font-family: var(--font-link);
+    font-size: 1.5rem; /* Увеличение на 50% от базового 1rem */
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: none;
+}
+
+a:hover,
+a:visited,
+a:active,
+a:focus {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 /* Хедер */
@@ -51,6 +69,7 @@ header {
 }
 
 .site-title a {
+    font-family: var(--font-primary);
     color: var(--primary-color);
     text-decoration: none;
     font-size: 1.8rem;
@@ -65,14 +84,52 @@ header {
 }
 
 .main-navigation a {
+    font-family: var(--font-link);
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
-.main-navigation a:hover {
+.main-navigation a:hover,
+.main-navigation .current-menu-item a {
     color: var(--secondary-color);
+}
+
+/* Гамбургер-меню для мобильных */
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Баннер на главной */
+.banner {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.banner h1 {
+    font-family: var(--font-secondary);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner .button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
 }
 
 /* Основной контент */
@@ -97,17 +154,21 @@ main {
 /* Кнопки */
 .button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.3rem 0.5rem; /* Увеличенные отступы */
     background-color: var(--primary-color);
     color: var(--white);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-weight: 500;
+    font-size: 1.5rem;
+    font-family: var(--font-link);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.8rem;
 }
 
 .button:hover {
     background-color: var(--secondary-color);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
@@ -118,17 +179,26 @@ main {
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
 }
 
+.service-card h2,
 .service-card h3 {
     color: var(--primary-color);
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card .entry-content {
+    margin-bottom: 1.5rem;
+}
+
+.service-card .button {
+    margin-top: 1.5rem;
 }
 
 /* Формы */
@@ -173,8 +243,10 @@ footer {
 }
 
 footer a {
+    font-family: var(--font-link);
     color: var(--secondary-color);
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
 footer a:hover {
@@ -188,12 +260,55 @@ footer a:hover {
         gap: 1rem;
     }
 
+    .main-navigation {
+        display: none;
+        width: 100%;
+    }
+
+    .main-navigation.active {
+        display: block;
+    }
+
     .main-navigation ul {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     .entry-title {
         font-size: 2rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .service-card h2,
+    .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .service-card .entry-content {
+        margin-bottom: 1.2rem;
+    }
+
+    .service-card .button {
+        margin-top: 1.2rem;
+    }
+
+    a,
+    .main-navigation a,
+    .button,
+    footer a {
+        font-size: 1.3rem;
     }
 }

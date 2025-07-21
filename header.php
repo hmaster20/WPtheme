@@ -17,6 +17,7 @@
                 }
                 ?>
             </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav class="main-navigation">
                 <?php
                 wp_nav_menu(array(
@@ -28,3 +29,10 @@
             </nav>
         </div>
     </header>
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.main-navigation').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
