@@ -251,15 +251,16 @@ form {
     padding-left: 1rem;
 }
 
-/* Горизонтальная линия */
-hr {
+/* Переопределение стилей для WordPress Separator */
+.wp-block-separator,
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
     border: 0;
     height: 1px;
     background-color: var(--gray);
     margin: 2rem 0;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Футер */
@@ -345,7 +346,8 @@ footer a:hover {
         margin-left: 1.5rem;
     }
 
-    hr {
-        width: 90%;
+    .wp-block-separator,
+    .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+        width: 70% !important;
     }
 }
