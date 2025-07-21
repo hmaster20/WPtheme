@@ -238,6 +238,30 @@ form {
     border-color: var(--primary-color);
 }
 
+/* Списки */
+.entry-content ul,
+.entry-content ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.entry-content ul li,
+.entry-content ol li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+/* Горизонтальная линия */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--gray);
+    margin: 2rem 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Футер */
 footer {
     background-color: var(--header-color);
@@ -314,5 +338,14 @@ footer a:hover {
     .button,
     footer a {
         font-size: 1.1rem;
+    }
+
+    .entry-content ul,
+    .entry-content ol {
+        margin-left: 1.5rem;
+    }
+
+    hr {
+        width: 90%;
     }
 }
