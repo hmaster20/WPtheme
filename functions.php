@@ -23,6 +23,11 @@ function careerpro_setup() {
     // Поддержка стилей редактора
     add_theme_support('wp-block-styles');
     add_theme_support('align-wide');
+    
+    // Поддержка favicon
+    add_theme_support('custom-header', array(
+        'default-image' => get_template_directory_uri() . '/images/favicon.ico',
+    ));
 }
 
 add_action('after_setup_theme', 'careerpro_setup');
