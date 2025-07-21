@@ -2,11 +2,6 @@
 
 <main>
     <?php if (is_home() || is_front_page()) : ?>
-        <div class="banner">
-            <h1><?php _e('Выбор профессии', 'careerpro'); ?></h1>
-            <p><?php _e('Поможем выбрать профессию и построить карьеру', 'careerpro'); ?></p>
-            <a href="<?php echo esc_url(home_url('/courses')); ?>" class="button"><?php _e('Узнать больше', 'careerpro'); ?></a>
-        </div>
     <?php endif; ?>
 
     <?php if (have_posts()) : ?>
