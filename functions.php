@@ -9,8 +9,8 @@ function careerpro_setup() {
     
     // Поддержка логотипа
     add_theme_support('custom-logo', array(
-        'height'      => 100,
-        'width'       => 400,
+        'height'      => 80,
+        'width'       => 80,
         'flex-height' => true,
         'flex-width'  => true,
     ));
@@ -29,7 +29,6 @@ add_action('after_setup_theme', 'careerpro_setup');
 
 function careerpro_enqueue_styles() {
     wp_enqueue_style('careerpro-style', get_stylesheet_uri(), array(), '1.1');
-    // Убрано подключение Google Fonts для производительности
 }
 
 add_action('wp_enqueue_scripts', 'careerpro_enqueue_styles');

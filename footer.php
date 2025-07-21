@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-content">
-        <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. <?php _e('Все права защищены.', 'careerpro'); ?></p>
+        <p>© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. <?php _e('Все права защищены.', 'careerpro'); ?></p>
         <p><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>"><?php _e('Политика конфиденциальности', 'careerpro'); ?></a></p>
     </div>
 </footer>
