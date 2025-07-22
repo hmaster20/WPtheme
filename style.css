@@ -7,6 +7,8 @@ Tags: professional, career, consulting, modern, corporate
 Text Domain: careerpro
 Requires at least: 5.8
 Requires PHP: 7.4
+Tested up to: 6.6
+Requires PHP: 7.4
 */
 
 :root {
@@ -437,6 +439,7 @@ footer a:hover {
 }
 
 .chat-popup input[type="text"],
+.chat-popup input[type="tel"],
 .chat-popup textarea {
     width: 100%;
     padding: 8px;
