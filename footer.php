@@ -18,6 +18,13 @@
             <button type="submit">Отправить</button>
         </form>
     </div>
+    <!-- JavaScript для переключения попапа -->
+    <script>
+        function toggleChatPopup() {
+            const chatPopup = document.getElementById('chatPopup');
+            chatPopup.classList.toggle('active');
+        }
+    </script>
 </footer>
 <?php wp_footer(); ?>
 </body>
