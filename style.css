@@ -263,6 +263,11 @@ form {
     margin-right: auto !important;
 }
 
+/* Параграфы */
+p {
+    margin-bottom: 1.5rem;
+}
+
 /* Футер */
 footer {
     background-color: var(--header-color);
@@ -349,5 +354,9 @@ footer a:hover {
     .wp-block-separator,
     .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
         width: 70% !important;
+    }
+
+    p {
+        margin-bottom: 1rem;
     }
 }
