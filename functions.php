@@ -39,4 +39,34 @@ function careerpro_enqueue_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'careerpro_enqueue_styles');
-?>
+
+// Обработчик AJAX для отправки в Telegram
+add_action('wp_ajax_send_telegram_message', 'send_telegram_message');
+add_action('wp_ajax_nopriv_send_telegram_message', 'send_telegram_message');
+
+function send_telegram_message() {
+    $data = json_decode($_POST['data'], true);
+
+
+    $message = "ФИО: {$data['full_name']}\n";
+    $message .= "Телефон: {$data['phone']}\n";
+    $message .= "E-mail: {$data['email']}\n";
+    $message .= "Сообщение: {$data['message']}\n";
+    $message .= "Дата и время: {$data['date_time']}\n";
+    $message .= "Браузер: {$data['user_agent']}";
+
+    $url = "https://api.telegram.org/bot{$token}/sendMessage";
+    $response = wp_remote_post($url, array(
+        'body' => array(
+            'chat_id' => $chat_id,
+            'text' => $message
+        )
+    ));
+
+    if (is_wp_error($response)) {
+        wp_send_json_error(array('message' => 'Ошибка при отправке в Telegram'));
+    } else {
+        wp_send_json_success();
+    }
+    wp_die();
+}
