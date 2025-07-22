@@ -66,7 +66,7 @@ header {
 .site-header {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,20 +81,22 @@ header {
 }
 
 .site-logo {
-    max-width: 80px;
+    max-width: 64px; /* Уменьшен на 20% с 80px */
     height: auto;
 }
 
 .contact-info {
     display: flex;
     align-items: center;
+    justify-content: center; /* Центрирование элементов */
+    flex-grow: 1; /* Занимает доступное пространство */
 }
 
 .contact-info a {
     font-family: var(--font-link);
     color: var(--white);
-    font-size: 1.1rem;
-    margin-left: 1rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -102,8 +104,8 @@ header {
 
 .contact-info .whatsapp i,
 .contact-info .telegram i {
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
     color: var(--white);
 }
 
@@ -115,7 +117,7 @@ header {
 /* Навигация */
 .main-navigation {
     background-color: var(--light-gray);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin-top: 1px;
     border-top: 1px solid var(--gray);
 }
@@ -127,7 +129,7 @@ header {
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem; /* Отодвинуто от краев */
 }
 
 .main-navigation a {
@@ -152,6 +154,7 @@ header {
     border: none;
     color: var(--white);
     cursor: pointer;
+    margin-left: auto; /* Размещение справа */
 }
 
 @media (max-width: 768px) {
@@ -160,22 +163,23 @@ header {
     }
 
     .site-header {
-        flex-direction: column;
-        gap: 0.8rem;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.3rem;
     }
 
     .contact-info {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
 
     .contact-info a {
-        margin-left: 0;
-        margin-top: 0.5rem;
+        margin-left: 0.3rem;
+        margin-top: 0;
     }
 
     .main-navigation {
-        padding: 0.5rem 0;
+        padding: 0.3rem 0;
         display: none;
     }
 
@@ -187,6 +191,7 @@ header {
         flex-direction: column;
         align-items: center;
         gap: 0.8rem;
+        padding: 0 1rem; /* Отодвинуто от краев на мобильных */
     }
 }
 
@@ -351,7 +356,7 @@ p {
 footer {
     background-color: var(--header-color);
     color: var(--white);
-    padding: 1.5rem;
+    padding: 0.5rem; /* Уменьшен верхний и нижний отступ */
     text-align: center;
 }
 
@@ -390,6 +395,10 @@ footer a:hover {
 
     .service-card .button {
         margin-top: 1rem;
+    }
+
+    footer {
+        padding: 0.5rem; /* Уменьшен для обычных браузеров */
     }
 }
 
@@ -439,5 +448,9 @@ footer a:hover {
 
     p {
         margin-bottom: 1rem;
+    }
+
+    footer {
+        padding: 0.5rem; /* Уменьшен для мобильных */
     }
 }

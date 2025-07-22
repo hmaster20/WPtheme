@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
     <style>
         .site-logo {
-            max-width: 80px;
+            max-width: 64px; /* Уменьшен на 20% с 80px */
             height: auto;
         }
     </style>
@@ -25,12 +25,12 @@
                 }
                 ?>
             </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <div class="contact-info">
                 <a href="tel:+1234567890">+1 234 567 890</a>
                 <a href="https://wa.me/1234567890" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://t.me/username" class="telegram"><i class="fab fa-telegram-plane"></i></a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
         </div>
         <nav class="main-navigation">
             <?php
