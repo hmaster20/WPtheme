@@ -96,26 +96,20 @@ header {
     font-size: 1.1rem;
     margin-left: 1rem;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info .whatsapp i,
+.contact-info .telegram i {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: var(--white);
 }
 
 .contact-info .whatsapp,
 .contact-info .telegram {
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
-    color: var(--white);
     text-decoration: none;
-}
-
-.contact-info .whatsapp::before {
-    content: "\f232"; /* Font Awesome WhatsApp icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-}
-
-.contact-info .telegram::before {
-    content: "\f2c6"; /* Font Awesome Telegram icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
 }
 
 /* Навигация */
@@ -158,6 +152,42 @@ header {
     border: none;
     color: var(--white);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .site-header {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info a {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .main-navigation {
+        padding: 0.5rem 0;
+        display: none;
+    }
+
+    .main-navigation.active {
+        display: block;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
 }
 
 /* Баннер на главной */
@@ -336,37 +366,34 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Адаптивность */
+@media (min-width: 769px) {
+    .entry-title {
+        font-size: 2rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .service-card h2,
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card .entry-content {
+        margin-bottom: 1rem;
+    }
+
+    .service-card .button {
+        margin-top: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .site-header {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-info a {
-        margin-left: 0;
-        margin-top: 0.5rem;
-    }
-
-    .main-navigation {
-        padding: 0.5rem 0;
-    }
-
-    .main-navigation ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
     .entry-title {
         font-size: 1.8rem;
     }
