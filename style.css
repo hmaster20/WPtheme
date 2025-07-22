@@ -1,7 +1,7 @@
 /*
 Theme Name: CareerPro
 Description: Современная WordPress тема для профориентации и карьерного консультирования
-Version: 1.1
+Version: 1.2
 Author: Grok
 Tags: professional, career, consulting, modern, corporate
 Text Domain: careerpro
@@ -15,6 +15,7 @@ Text Domain: careerpro
     --background-color: #FFFFFF;
     --white: #FFFFFF;
     --gray: #B0BEC5;
+    --light-gray: #4A4A4A; /* Слегка светлее для меню */
     --font-primary: 'Montserrat', sans-serif; /* Основной шрифт */
     --font-secondary: 'Roboto', sans-serif; /* Шрифт для акцентов */
     --font-link: 'Roboto', sans-serif;
@@ -82,11 +83,51 @@ header {
     height: auto;
 }
 
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info a {
+    font-family: var(--font-link);
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.contact-info .whatsapp,
+.contact-info .telegram {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.contact-info .whatsapp::before {
+    content: "\f232"; /* Font Awesome WhatsApp icon */
+    font-family: "FontAwesome";
+}
+
+.contact-info .telegram::before {
+    content: "\f2c6"; /* Font Awesome Telegram icon */
+    font-family: "FontAwesome";
+}
+
 /* Навигация */
+.main-navigation {
+    background-color: var(--light-gray);
+    padding: 1rem 0;
+    margin-top: 1px;
+    border-top: 1px solid var(--gray);
+}
+
 .main-navigation ul {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .main-navigation a {
@@ -296,13 +337,18 @@ footer a:hover {
         gap: 0.8rem;
     }
 
-    .main-navigation {
-        display: none;
-        width: 100%;
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .main-navigation.active {
-        display: block;
+    .contact-info a {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .main-navigation {
+        padding: 0.5rem 0;
     }
 
     .main-navigation ul {
