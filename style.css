@@ -15,9 +15,9 @@ Text Domain: careerpro
     --background-color: #FFFFFF;
     --white: #FFFFFF;
     --gray: #B0BEC5;
-    --font-primary: 'Arial', sans-serif; /* Четкий и строгий шрифт */
-    --font-secondary: 'Times New Roman', serif; /* Классический шрифт */
-    --font-link: 'Arial', sans-serif;
+    --font-primary: 'Montserrat', sans-serif; /* Основной шрифт */
+    --font-secondary: 'Roboto', sans-serif; /* Шрифт для акцентов */
+    --font-link: 'Roboto', sans-serif;
 }
 
 * {
@@ -134,6 +134,7 @@ header {
 }
 
 .banner .button {
+    font-family: var(--font-secondary);
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
 }
@@ -167,7 +168,7 @@ main {
     border-radius: 4px;
     font-weight: 600;
     font-size: 1.1rem;
-    font-family: var(--font-link);
+    font-family: var(--font-secondary);
     transition: background-color 0.3s ease;
 }
 
@@ -192,6 +193,7 @@ main {
 
 .service-card h2,
 .service-card h3 {
+    font-family: var(--font-secondary);
     color: var(--text-color);
     font-size: 1.3rem;
     margin-bottom: 1rem;

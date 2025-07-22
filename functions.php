@@ -33,7 +33,9 @@ function careerpro_setup() {
 add_action('after_setup_theme', 'careerpro_setup');
 
 function careerpro_enqueue_styles() {
-    wp_enqueue_style('careerpro-style', get_stylesheet_uri(), array(), '1.1');
+    // Подключение Google Fonts
+    wp_enqueue_style('careerpro-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap', array(), null);
+    wp_enqueue_style('careerpro-style', get_stylesheet_uri(), array('careerpro-google-fonts'), '1.1');
 }
 
 add_action('wp_enqueue_scripts', 'careerpro_enqueue_styles');
