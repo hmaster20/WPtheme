@@ -88,8 +88,7 @@ header {
 .contact-info {
     display: flex;
     align-items: center;
-    justify-content: center; /* Центрирование элементов */
-    flex-grow: 1; /* Занимает доступное пространство */
+    justify-content: flex-end; /* Справа для обычных браузеров */
 }
 
 .contact-info a {
@@ -165,12 +164,14 @@ header {
     .site-header {
         flex-direction: row;
         gap: 0.5rem;
-        padding: 0.3rem;
+        padding: 0.6rem 0.6rem;
     }
 
     .contact-info {
         flex-direction: row;
         text-align: center;
+        justify-content: center; /* Центрирование для мобильных между логотипом и бургер-меню */
+        margin: 0 auto; /* Центрирование блока */
     }
 
     .contact-info a {
@@ -356,7 +357,7 @@ p {
 footer {
     background-color: var(--header-color);
     color: var(--white);
-    padding: 0.5rem; /* Уменьшен верхний и нижний отступ */
+    padding: 0.5rem;
     text-align: center;
 }
 
@@ -397,8 +398,8 @@ footer a:hover {
         margin-top: 1rem;
     }
 
-    footer {
-        padding: 0.5rem; /* Уменьшен для обычных браузеров */
+    .contact-info {
+        justify-content: flex-end; /* Справа для обычных браузеров */
     }
 }
 
@@ -448,9 +449,5 @@ footer a:hover {
 
     p {
         margin-bottom: 1rem;
-    }
-
-    footer {
-        padding: 0.5rem; /* Уменьшен для мобильных */
     }
 }
