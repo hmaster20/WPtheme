@@ -5,6 +5,8 @@ Version: 1.2
 Author: Grok
 Tags: professional, career, consulting, modern, corporate
 Text Domain: careerpro
+Requires at least: 5.8
+Requires PHP: 7.4
 */
 
 :root {
@@ -100,16 +102,20 @@ header {
 .contact-info .telegram {
     font-size: 1.5rem;
     margin-left: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
 }
 
 .contact-info .whatsapp::before {
     content: "\f232"; /* Font Awesome WhatsApp icon */
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
 .contact-info .telegram::before {
     content: "\f2c6"; /* Font Awesome Telegram icon */
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
 /* Навигация */
