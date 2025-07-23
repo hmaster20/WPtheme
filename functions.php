@@ -46,7 +46,8 @@ add_action('wp_ajax_nopriv_send_telegram_message', 'send_telegram_message');
 
 function send_telegram_message() {
     $data = json_decode($_POST['data'], true);
-
+    $token = '77054388'; // Ваш токен
+    $chat_id = '-49325'; // ID группы
 
     $message = "ФИО: {$data['full_name']}\n";
     $message .= "Телефон: {$data['phone']}\n";
