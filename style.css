@@ -325,6 +325,14 @@ form {
     border-color: var(--primary-color);
 }
 
+.form-group input[type="tel"] {
+    color: #888; /* Серый цвет для примера */
+}
+
+.form-group input[type="tel"]:focus {
+    color: black; /* Черный цвет при вводе */
+}
+
 /* Списки */
 .entry-content ul,
 .entry-content ol {
@@ -440,6 +448,7 @@ footer a:hover {
 
 .chat-popup input[type="text"],
 .chat-popup input[type="tel"],
+.chat-popup input[type="email"],
 .chat-popup textarea {
     width: 100%;
     padding: 8px;
@@ -465,6 +474,12 @@ footer a:hover {
 
 .chat-popup button[type="submit"]:hover {
     background-color: #357ABD;
+}
+
+.chat-popup .form-message {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
 }
 
 @media (min-width: 769px) {

@@ -45,9 +45,19 @@ add_action('wp_ajax_send_telegram_message', 'send_telegram_message');
 add_action('wp_ajax_nopriv_send_telegram_message', 'send_telegram_message');
 
 function send_telegram_message() {
-    $data = json_decode($_POST['data'], true);
-    $token = '77054388'; // Ваш токен
-    $chat_id = '-49325'; // ID группы
+    if (!defined('TELEGRAM_TOKEN') || !defined('TELEGRAM_CHAT_ID')) {
+        wp_send_json_error(array('message' => 'Конфигурационные данные не настроены'));
+        return;
+    }
+
+    $data = json_decode(stripslashes($_POST['data']), true); // Исправление декодирования JSON
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        wp_send_json_error(array('message' => 'Ошибка декодирования данных: ' . json_last_error_msg()));
+        return;
+    }
+
+    $token = TELEGRAM_TOKEN;
+    $chat_id = TELEGRAM_CHAT_ID;
 
     $message = "ФИО: {$data['full_name']}\n";
     $message .= "Телефон: {$data['phone']}\n";
@@ -55,6 +65,8 @@ function send_telegram_message() {
     $message .= "Сообщение: {$data['message']}\n";
     $message .= "Дата и время: {$data['date_time']}\n";
     $message .= "Браузер: {$data['user_agent']}";
+
+    error_log('Отправка в Telegram: ' . $message); // Отладка
 
     $url = "https://api.telegram.org/bot{$token}/sendMessage";
     $response = wp_remote_post($url, array(
@@ -65,7 +77,7 @@ function send_telegram_message() {
     ));
 
     if (is_wp_error($response)) {
-        wp_send_json_error(array('message' => 'Ошибка при отправке в Telegram'));
+        wp_send_json_error(array('message' => 'Ошибка при отправке в Telegram: ' . $response->get_error_message()));
     } else {
         wp_send_json_success();
     }

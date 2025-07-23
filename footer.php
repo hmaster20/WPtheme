@@ -13,7 +13,7 @@
                 <input type="text" name="full_name" placeholder="Ваше ФИО" required>
             </div>
             <div class="form-group">
-                <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
+                <input type="tel" name="phone" placeholder="Номер телефона: +1234567890" required>
             </div>
             <div class="form-group">
                 <input type="email" name="email" placeholder="Ваш E-mail" required>
@@ -98,6 +98,22 @@
 
             return false;
         }
+
+        // Очистка примера номера телефона при фокусе
+        document.querySelector('input[name="phone"]').addEventListener('focus', function() {
+            if (this.value === 'Например: +1234567890') {
+                this.value = '';
+                this.style.color = 'black';
+            }
+        });
+
+        // Восстановление примера при потере фокуса, если поле пустое
+        document.querySelector('input[name="phone"]').addEventListener('blur', function() {
+            if (!this.value) {
+                this.value = 'Например: +1234567890';
+                this.style.color = '#888'; // Серый фон для примера
+            }
+        });
     </script>
 </footer>
 <?php wp_footer(); ?>
