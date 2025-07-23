@@ -59,12 +59,11 @@ function send_telegram_message() {
     $token = TELEGRAM_TOKEN;
     $chat_id = TELEGRAM_CHAT_ID;
 
-    $message = "ФИО: {$data['full_name']}\n";
+    $message = "Запрос обратной связи sve-toch.ru {$data['date_time']}:\n\n";
+    $message .= "ФИО: {$data['full_name']}\n";
     $message .= "Телефон: {$data['phone']}\n";
-    $message .= "E-mail: {$data['email']}\n";
+    $message .= "E-mail: {$data['email']}\n\n";
     $message .= "Сообщение: {$data['message']}\n";
-    $message .= "Дата и время: {$data['date_time']}\n";
-    $message .= "Браузер: {$data['user_agent']}";
 
     error_log('Отправка в Telegram: ' . $message); // Отладка
 

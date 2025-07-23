@@ -13,7 +13,7 @@
                 <input type="text" name="full_name" placeholder="Ваше ФИО" required>
             </div>
             <div class="form-group">
-                <input type="tel" name="phone" placeholder="Номер телефона: +1234567890" required>
+                <input type="tel" name="phone" placeholder="Номер телефона: +7123456789" required>
             </div>
             <div class="form-group">
                 <input type="email" name="email" placeholder="Ваш E-mail" required>
@@ -49,7 +49,7 @@
                 return false;
             }
             if (!/^\+?\d{10,15}$/.test(phone)) {
-                messageDiv.textContent = 'Номер телефона должен содержать 10-15 цифр (например, +1234567890).';
+                messageDiv.textContent = 'Номер телефона должен содержать 10-15 цифр (например, +7123456789).';
                 messageDiv.style.color = 'red';
                 return false;
             }
